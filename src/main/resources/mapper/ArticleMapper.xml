@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fish.mapper.ArticleMapper">
+
+    <select id="selectArticle" resultMap="articleResult">
+        select a.*, c.id c_id, c.content c_content,
+        c.author c_author from t_article a, t_comment c
+        where a.id = #{id} and c.a_id = a.id
+    </select>
+
+    <resultMap type="Article" id="articleResult">
+        <id property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="content" column="content"/>
+        <collection property="comments" ofType="Comment">
+            <id property="id" column="c_id"/>
+            <result property="content" column="c_content"/>
+            <result property="author" column="c_author"/>
+        </collection>
+    </resultMap>
+
+</mapper>
