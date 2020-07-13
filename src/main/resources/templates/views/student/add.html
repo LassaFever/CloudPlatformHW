@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>学生管理系统</title>
+</head>
+<body>
+    <div th:replace="fragments/head::titleInfo"></div>
+    <hr>
+    <div>
+        <form method="post" action="/student/add">
+        <table width="400" border="1" align="center">
+            <caption>添加学生信息</caption>
+            <tr>
+                <td>所在班级</td>
+                <td>
+                    <select name="klassInfoId">
+                        <option th:each="k:${klassList}" th:value="${k.id}" th:text="${k.name}"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>学生姓名</td>
+                <td><input name="name"></td>
+            </tr>
+            <tr>
+                <td>学生年龄</td>
+                <td><input name="age"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right">
+                    <input type="submit" value="新增">
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

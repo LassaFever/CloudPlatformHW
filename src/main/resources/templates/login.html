@@ -1,33 +1,32 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8" http-equiv="Content-Type" content="text/html">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Login</title>
-
-    <link th:href="@{/css/bootsrap.min.css}" rel="stylesheet"/>
-    <link th:href="@{/css/sigin.css}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>学生管理系统</title>
 </head>
-<body class="text-center">
-
-<form class="form-signin">
-    <img class="mb-4" th:src="@{/img/login.jpg}" width="72" height="72">
-    <h1 class="h3 mb-3 font-weight-normal" th:text="#{login.tip}"  >请登录</h1>
-    <input type="text" class="form-control" placeholder="用户名" th:placeholder="#{login.username}" required="required" autofocus="">
-    <input type="password" class="form-control" placeholder="密码" required th:placeholder="#{login.password}">
-
-    <div class="checkbox mb-3">
-        <label>
-
-            <input type="checkbox" value="remember-me">[[#{login.rememberme}]]
-
-        </label>
-    </div>
-
-    <button type="submit" class="btn btn-lg btn-primary btn-block" th:text="#{login.button}">登录</button>
-    <p class="mt-5 mb-3 text-muted">©<span th:text="${currentYear}"></span>-<span th:text="${currentYear}+1"></span></p>
-    <a class="btn btn-sm" th:href="@{/tologin(1='zh_CN')}">中文</a>
-    <a class="btn btn-sm" th:href="@{/tologin(1='en_US')}">English</a>
+<body>
+<h1 align="center">用户登录</h1>
+<hr>
+<form method="post" action="/login">
+    <table align="center">
+        <tr>
+            <td style="color:red;" colspan="2" th:text="${errMsg}"></td>
+        </tr>
+        <tr>
+            <td>用户名</td>
+            <td><input id="username" name="username"></td>
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td><input type="password" id="password" name="password"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="right">
+                <input type="submit" value="登录">
+            </td>
+        </tr>
+    </table>
 </form>
+
 </body>
 </html>
