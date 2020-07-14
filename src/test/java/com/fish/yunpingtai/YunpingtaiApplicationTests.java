@@ -13,23 +13,23 @@ class YunpingtaiApplicationTests {
 //    @Autowired
 //    private CommentMapper commentMapper;
 
-    @Autowired
-    private ArticleMapper articleMapper;
-
-    @Test
-    void contextLoads() {
-    }
+//    @Autowired
+//    private ArticleMapper articleMapper;
 //
 //    @Test
-//    public void selectComment(){
-//        Comment comment = commentMapper.findById(1);
-//        System.out.println(comment);
+//    void contextLoads() {
 //    }
-
-    @Test
-    public void selectArticle(){
-        Article article = articleMapper.selectArticle(1);
-        System.out.println(article);
-    }
+////
+////    @Test
+////    public void selectComment(){
+////        Comment comment = commentMapper.findById(1);
+////        System.out.println(comment);
+////    }
+//
+//    @Test
+//    public void selectArticle(){
+//        Article article = articleMapper.selectArticle(1);
+//        System.out.println(article);
+//    }
 
 }

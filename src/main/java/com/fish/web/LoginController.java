@@ -15,7 +15,7 @@ public class LoginController {
     @GetMapping("/tologin")
     public String login(Model model){
 
-        model.addAttribute("currentYear", Calendar.getInstance().get(Calendar.YEAR));
+//        model.addAttribute("currentYear", Calendar.getInstance().get(Calendar.YEAR));
 
         return "login";
     }
